@@ -3,6 +3,8 @@ package com.tblin.android.base.baseservice;
 import java.util.List;
 
 import com.tblin.android.base.domain.User;
+import com.tblin.android.base.event.EventListener;
+import com.tblin.android.base.event.ServiceEventHandler;
 
 public interface FriendshipService extends BaseService {
 	ServiceEventHandler onFriendshipRequest();

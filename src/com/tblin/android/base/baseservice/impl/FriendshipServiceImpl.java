@@ -1,13 +1,13 @@
 package com.tblin.android.base.baseservice.impl;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import com.tblin.android.base.baseservice.EventListener;
 import com.tblin.android.base.baseservice.FriendshipService;
-import com.tblin.android.base.baseservice.ServiceEventHandler;
 import com.tblin.android.base.domain.User;
+import com.tblin.android.base.event.Event;
+import com.tblin.android.base.event.EventListener;
+import com.tblin.android.base.event.ServiceEventHandler;
+import com.tblin.android.base.event.ServiceEventHandlerImpl;
 
 public class FriendshipServiceImpl extends BaseServiceImpl implements
 		FriendshipService {
@@ -66,7 +66,7 @@ public class FriendshipServiceImpl extends BaseServiceImpl implements
 	@Override
 	public void request(User user, EventListener responseCallback) {
 		
-		Map<String, Object> event = new HashMap<String, Object>();
+		Event event = new Event();
 		
 		this.fireEvent(responseCallback, event);
 

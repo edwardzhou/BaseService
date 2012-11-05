@@ -1,10 +1,9 @@
 package com.tblin.android.base.baseservice.impl;
 
-import java.util.Map;
-
 import com.tblin.android.base.baseservice.BaseService;
-import com.tblin.android.base.baseservice.EventListener;
 import com.tblin.android.base.domain.UserSession;
+import com.tblin.android.base.event.Event;
+import com.tblin.android.base.event.EventListener;
 
 public class BaseServiceImpl implements BaseService {
 	
@@ -22,7 +21,7 @@ public class BaseServiceImpl implements BaseService {
 
 	}
 	
-	protected void fireEvent(EventListener listener, Map<String, Object> event) {
+	protected void fireEvent(EventListener listener, Event event) {
 		if (listener != null) {
 			try {
 				listener.handle(event);
